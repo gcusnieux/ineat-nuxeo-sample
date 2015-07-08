@@ -7,11 +7,11 @@ base=https://connect.nuxeo.com/nuxeo/site/marketplace
 login=myConnectLogin
 password=myConnectPassword
 
-package=../../../target/marketplace-1.0-SNAPSHOT.zip
+package=../../../target/marketplace-1.1.0-SNAPSHOT.zip
 
 PROJECT_ID=myStudioProjectId
 OWNER_ID=myOwnerId
-PACKAGE_ID=ineat-nuxeo-addon-marketplace-1.0-0-SNAPSHOT
+PACKAGE_ID=ineat-nuxeo-addon-marketplace-1.1-0-SNAPSHOT
 
 function usage() {
   echo "toMarketplace [upload|delete|list]"
