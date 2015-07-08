@@ -65,3 +65,11 @@ Connection: keep-alive
 ```
 
 Le script fonctionne...
+
+### Etape 5 : Faire une release avec maven
+
+On utilise un pom parent qui compile l'ensemble des modules : l'addon et le packaging
+
+```bash
+mvn release:clean release:prepare
+```
