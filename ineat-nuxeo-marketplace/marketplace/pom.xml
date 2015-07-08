@@ -3,7 +3,7 @@
   <parent>
     <groupId>com.ineat-conseil.nuxeo.marketplace</groupId>
     <artifactId>parent</artifactId>
-    <version>1.1.0</version>
+    <version>1.1.1-SNAPSHOT</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
@@ -30,7 +30,7 @@
     <dependency>
       <groupId>com.ineat-conseil.nuxeo</groupId>
       <artifactId>ineat-nuxeo-addon</artifactId>
-      <version>1.1.0</version>
+      <version>1.1.1-SNAPSHOT</version>
     </dependency>
   </dependencies>
 
