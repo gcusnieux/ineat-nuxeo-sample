@@ -1,0 +1,48 @@
+#!/bin/sh
+
+cd $(dirname $0)
+
+base=https://connect.nuxeo.com/nuxeo/site/marketplace
+
+login=myConnectLogin
+password=myConnectPassword
+
+package=../../../target/marketplace-1.0-SNAPSHOT.zip
+
+PROJECT_ID=myStudioProjectId
+OWNER_ID=myOwnerId
+PACKAGE_ID=ineat-nuxeo-addon-marketplace-1.0-0-SNAPSHOT
+
+function usage() {
+  echo "toMarketplace [upload|delete|list]"
+}
+
+function upload() {
+  # Upload a package (owner parameter is required, client or project parameter is required)
+  curl -i -u $login:$password -X POST -F package=@$package $base"/upload?batch=true&project="$PROJECT_ID"&owner="$OWNER_ID
+}
+
+function delete() {
+  # Delete a package
+  curl -i -u $login:$password -X DELETE $base"/delete/"$PACKAGE_ID
+}
+
+function list() {
+  # List package IDs (not yet available; owner, client or project parameter will be required)
+  curl -i -u $login:$password $base"/list?batch=true&project="$PROJECT_ID"&owner="$OWNER_ID
+}
+
+case "$1" in
+  upload)
+        upload
+        ;;
+  delete)
+        delete
+        ;;
+  list)
+        list
+        ;;
+  *)
+        usage
+        ;;
+esac
