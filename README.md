@@ -73,3 +73,18 @@ On utilise un pom parent qui compile l'ensemble des modules : l'addon et le pack
 ```bash
 mvn release:clean release:prepare
 ```
+
+Le script n'est pas à jour avec les numéros de version du tag...
+
+### Etape 6 : Filtrer le script de dépoiement
+
+ * Définition des variables du script dans des propriétés du pom
+ * Factorisation du PACKAGE_ID entre le script de déploiement et le package.xml grâce à l'assembly
+ * Utilisation du maven-resources-plugin pour copier et filtrer le script
+ * Utilisation du exec-maven-plugin afin de rendre le script executable
+ 
+### Etape 7 : Faire une release correct
+
+```bash
+mvn release:clean release:prepare
+```
