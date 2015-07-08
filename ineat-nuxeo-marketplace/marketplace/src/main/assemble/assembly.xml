@@ -38,6 +38,7 @@
       <filterset>
         <filter token="VERSION" value="${marketplace.ineat-nuxeo-addon.version}" />
         <filter token="DISTRIB_VERSION" value="${nuxeo.distribution.version}" />
+        <filter token="PACKAGE_ID" value="${marketplace.packageId}" />
       </filterset>
     </copy>
     <copy file="${outdir}/artifacts-ineat-nuxeo-addon.properties"

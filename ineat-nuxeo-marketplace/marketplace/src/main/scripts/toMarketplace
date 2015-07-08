@@ -4,14 +4,14 @@ cd $(dirname $0)
 
 base=https://connect.nuxeo.com/nuxeo/site/marketplace
 
-login=myConnectLogin
-password=myConnectPassword
+login=${marketplace.login}
+password=${marketplace.password}
 
-package=../../../target/marketplace-1.1.0-SNAPSHOT.zip
+package=../marketplace-${marketplace.ineat-nuxeo-addon.version}.zip
 
-PROJECT_ID=myStudioProjectId
-OWNER_ID=myOwnerId
-PACKAGE_ID=ineat-nuxeo-addon-marketplace-1.1-0-SNAPSHOT
+PROJECT_ID=${marketplace.projectId}
+OWNER_ID=${marketplace.ownerId}
+PACKAGE_ID=${marketplace.packageId}-${marketplace.ineat-nuxeo-addon.version}
 
 function usage() {
   echo "toMarketplace [upload|delete|list]"
