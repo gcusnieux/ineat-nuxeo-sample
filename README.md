@@ -1,11 +1,20 @@
 # Ineat Nuxeo Sample
 
-## Etape 1 : Générer le projet avec Nuxeo IDE
+Ce projet montre un exemple de packaging d'un addon Nuxeo
 
-## Etape 2 : Générer le projet de packaging avec Nuxeo IDE
+### Etape 1 : Générer le projet avec Nuxeo IDE
 
-## Etape 3 : Créer le script de déploiement sur le canal privé Nuxeo
+Voir la doc : https://doc.nuxeo.com/display/NXDOC/Getting+Started+with+Nuxeo+IDE
 
+### Etape 2 : Générer le projet de packaging avec Nuxeo IDE
+
+Voir la doc : https://doc.nuxeo.com/display/IDEDOC/Creating+a+Custom+Marketplace+Package
+
+### Etape 3 : Créer le script de déploiement sur le canal privé
+
+Il est désormais possible d'envoyer le package dans le canal privé.
+
+```bash
 chmod +x ineat-nuxeo-marketplace/marketplace/src/main/scripts/toMarketplace
 
 ./ineat-nuxeo-marketplace/marketplace/src/main/scripts/toMarketplace upload
@@ -21,9 +30,11 @@ Vary: Accept-Encoding
 X-UA-Compatible: IE=10; IE=11
 Content-Length: 0
 Connection: keep-alive
+```
 
-WTF ?
+Par contre la suppression ne fonctionne pas...
 
+```bash
 ./ineat-nuxeo-marketplace/marketplace/src/main/scripts/toMarketplace delete
 HTTP/1.1 404 Not Found
 Content-Type: text/html;charset=UTF-8
@@ -34,9 +45,13 @@ Vary: Accept-Encoding
 X-UA-Compatible: IE=10; IE=11
 Content-Length: 2456
 Connection: keep-alive
+```
 
-## Etape 4 : Corriger le script de deployment
+### Etape 4 : Corriger le script de déploiement
 
+Pour des raisons inexpliquées notre addon et notre packaging (en version 1.0-SNAPSHOT) a la version 1.0.0-SNAPSHOT sur le canal privé
+
+```bash
 ./ineat-nuxeo-marketplace/marketplace/src/main/scripts/toMarketplace delete
 HTTP/1.1 200 OK
 Content-Type: text/html;charset=UTF-8
@@ -47,3 +62,6 @@ Vary: Accept-Encoding
 X-UA-Compatible: IE=10; IE=11
 Content-Length: 0
 Connection: keep-alive
+```
+
+Le script fonctionne...
